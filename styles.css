@@ -1,0 +1,295 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f4f8;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  background-color: #3498db;
+  color: white;
+  text-align: center;
+  padding: 1em;
+}
+
+nav {
+  background-color: #2980b9;
+  padding: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+.content {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.hidden {
+  display: none;
+}
+
+input[type="text"], textarea, input[type="number"], input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+.progress-bar {
+  width: 60%;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  margin-right: 20px;
+  height: 20px;
+  position: relative;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: #3498db;
+  text-align: center;
+  color: white;
+  border-radius: 5px;
+  width: 0%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 20px;
+  font-size: 12px;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fafafa;
+}
+
+.meta-item span {
+  flex: 1;
+}
+
+.meta-item button {
+  margin-left: 10px;
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+#calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  margin-top: 20px;
+}
+
+.calendar-day {
+  background-color: #ecf0f1;
+  padding: 10px;
+  text-align: center;
+  border-radius: 4px;
+  position: relative;
+}
+
+.calendar-day:hover {
+  background-color: #bdc3c7;
+  cursor: pointer;
+}
+
+.day-tasks {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  display: none;
+  z-index: 1000;
+}
+
+.calendar-day.active .day-tasks {
+  display: block;
+}
+
+.task-input, .date-input {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.task-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.task-list li {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+.anotacao-item {
+  margin-bottom: 10px;
+}
+
+.day-notes {
+  margin-top: 20px;
+}
+
+.day-notes ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.day-notes ul li {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 5px;
+}
+.hidden {
+  display: none;
+}
+
+.calendar-day {
+  display: inline-block;
+  width: 14%;
+  padding: 35px;
+  border: 1px solid #ccc;
+  text-align: center;
+  cursor: pointer;
+}
+
+.progress-bar-fill {
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+  height: 20px;
+  line-height: 20px;
+}
+
+.meta-item {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+button {
+  margin-top: 10px;
+  display: inline-block;
+  padding: 5px;
+}
+/* Ajustes para dispositivos menores */
+@media (max-width: 768px) {
+  nav ul {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .content {
+      padding: 15px;
+  }
+
+  input[type="text"],
+  textarea,
+  input[type="number"],
+  input[type="date"],
+  button {
+      font-size: 14px;
+  }
+
+  .calendar-day {
+      width: 20%; /* 5 dias por linha em telas menores */
+  }
+
+  .day-notes ul li {
+      font-size: 14px;
+  }
+}
+
+/* Ajustes para dispositivos muito pequenos */
+@media (max-width: 480px) {
+  .container {
+      padding: 10px;
+  }
+
+  h1 {
+      font-size: 24px;
+  }
+
+  h2, h3 {
+      font-size: 20px;
+  }
+
+  input[type="text"],
+  textarea,
+  input[type="number"],
+  input[type="date"],
+  button {
+      padding: 8px;
+  }
+}
+
+#calendar {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os itens se movam para a linha de baixo */
+  justify-content: space-between; /* Espaçamento entre os dias */
+  margin-top: 20px;
+}
+
+.calendar-day {
+  flex: 1 0 14%; /* Isso fará com que cada dia ocupe aproximadamente 14% da largura, mas encolha em telas menores */
+  min-width: 80px; /* Define uma largura mínima para os dias */
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+  cursor: pointer;
+}

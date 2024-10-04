@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">                                                                           
+    <title>Gerenciador de Estudos</title>
+</head>
+<body onload="carregarMetas()">
+    <header>
+        <h1>Gerenciador de Estudos</h1>
+    </header>
+      
+    <nav>
+        <ul>
+          <li><a href="#metas" onclick="showSection('metas')">Metas de Estudos</a></li>
+          <li><a href="#anotacoes" onclick="showSection('anotacoes')">Anotações</a></li>
+          <li><a href="#cronograma" onclick="showSection('cronograma')">Cronograma</a></li>
+          <li><a href="#atividades" onclick="showSection('atividades')">Atividades</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <div id="metas" class="content">
+            <h2>Metas de Estudos</h2>
+            <input type="text" id="novaMeta" placeholder="Digite sua nova meta de estudo">
+            <input type="number" id="porcentagemMeta" placeholder="Digite a porcentagem (0-100)" max="100" min="0">
+            <button onclick="adicionarMeta()">Adicionar Meta</button>
+            <ul id="listaMetas"></ul>
+        </div>
+    
+        <div id="anotacoes" class="content hidden">
+            <h2>Anotações</h2>
+            <input type="date" id="dataAnotacao" class="date-input">
+            <textarea id="anotacao" rows="5" placeholder="Digite suas anotações aqui"></textarea>
+            <button onclick="salvarNotas()">Salvar Notas</button>
+            <div id="listaAnotacoes"></div>
+            <ul id="notes-list-anotacoes"></ul>
+        </div>
+    
+        <div id="cronograma" class="content hidden">
+            <h2>Cronograma</h2>
+            <div id="calendar"></div>
+            <div id="notepad" class="hidden">
+                <h3>Notas para <span id="selected-date"></span></h3>
+                <ul id="task-list"></ul>
+                <textarea id="notepad-content" rows="5" placeholder="Digite suas notas aqui"></textarea>
+                <input type="date" id="notepad-date" class="date-input">
+                <button onclick="salvarNotas()">Salvar Nota</button>
+                <button id="apagar-notas">Apagar Essas Notas</button>
+            </div>
+            <div class="day-notes" id="day-notes">
+                <h3>Notas e Tarefas</h3>
+                <ul id="notes-list"></ul>
+            </div>
+        </div>
+    
+        <div id="atividades" class="content hidden">
+            <h2>Atividades</h2>
+            <input type="text" id="atividadeInput" placeholder="Digite uma atividade">
+            <button>Adicionar Atividade</button>
+            <ul id="listaAtividades"></ul>
+        </div>
+    </div>
+    
+    <script src="scripts.js"></script>
+</body>
+</html>
